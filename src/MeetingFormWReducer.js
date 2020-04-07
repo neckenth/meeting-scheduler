@@ -22,7 +22,10 @@ const MeetingFormWReducer = (props) => {
             <label for="name">Meeting Name</label>
             <input
               onChange={(e) =>
-                dispatch({ type: "enterMeetingName", payload: e.target.value })
+                dispatch({
+                  type: "enterFormData",
+                  payload: { meetingName: e.target.value },
+                })
               }
               id="name"
               value={meetingName}
@@ -34,7 +37,10 @@ const MeetingFormWReducer = (props) => {
               id="date"
               type="date"
               onChange={(e) =>
-                dispatch({ type: "enterMeetingDate", payload: e.target.value })
+                dispatch({
+                  type: "enterFormData",
+                  payload: { meetingDate: e.target.value },
+                })
               }
               value={meetingDate}
             />
@@ -44,7 +50,10 @@ const MeetingFormWReducer = (props) => {
             <select
               onChange={(e) =>
                 e.target.value &&
-                dispatch({ type: "selectAttendee", payload: e.target.value })
+                dispatch({
+                  type: "selectAttendee",
+                  payload: e.target.value,
+                })
               }
               id="attendees"
             >
@@ -82,8 +91,8 @@ const MeetingFormWReducer = (props) => {
                 onChange={(e) =>
                   e.target.value &&
                   dispatch({
-                    type: "enterMeetingRoom",
-                    payload: e.target.value,
+                    type: "enterFormData",
+                    payload: { meetingRoom: e.target.value },
                   })
                 }
                 id="room"

@@ -53,14 +53,11 @@ export const schedulerReducer = (state, action) => {
 
 export const formReducer = (state, action) => {
   switch (action.type) {
-    case "enterMeetingName":
-      return { ...state, meetingName: action.payload };
+    case "enterFormData": {
+      return { ...state, ...action.payload };
+    }
     case "toggleInPerson":
       return { ...state, inPerson: !state.inPerson };
-    case "enterMeetingRoom":
-      return { ...state, meetingRoom: action.payload };
-    case "enterMeetingDate":
-      return { ...state, meetingDate: action.payload };
     case "selectAttendee":
       return { ...state, selectedAttendee: action.payload };
     case "addMeetingAttendees":
