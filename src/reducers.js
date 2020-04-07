@@ -9,6 +9,7 @@ const existingMeetings = [
 const attendeeNames = [
   "Tim",
   "Anthony",
+  "Nancy",
   "Manan",
   "Lena",
   "Jeremy",
@@ -40,7 +41,7 @@ export const schedulerReducer = (state, action) => {
   switch (action.type) {
     case "toggleMeetingForm":
       return { ...state, addNewMeeting: !state.addNewMeeting };
-    case "submitForm":
+    case "addMeeting":
       return {
         ...state,
         meetings: [...state.meetings, action.payload],
@@ -66,7 +67,7 @@ export const formReducer = (state, action) => {
         meetingAttendees: [...state.meetingAttendees, state.selectedAttendee],
         selectAttendee: "",
       };
-    case "submitForm":
+    case "resetForm":
       return {
         ...state,
         meetingName: "",

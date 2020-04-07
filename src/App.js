@@ -8,13 +8,13 @@ import { colors, PreferredColorContext, DateContext } from "./context";
 function App() {
   return (
     <DateContext.Provider value={new Date()}>
-      <PreferredColorContext.Provider value={colors}>
-        <div className="App">
-          <Meetings />
-          {/* <MeetingsWReducer /> */}
-          {/* <MeetingsWReducerWContext /> */}
-        </div>
-      </PreferredColorContext.Provider>
+      {/* <PreferredColorContext.Provider value={colors}> */}
+      <div className="App">
+        <Meetings />
+        {/* <MeetingsWReducer /> */}
+        {/* <MeetingsWReducerWContext /> */}
+      </div>
+      {/* </PreferredColorContext.Provider> */}
     </DateContext.Provider>
   );
 }

@@ -69,7 +69,6 @@ const MeetingFormWReducer = (props) => {
               onClick={(e) => {
                 e.preventDefault();
                 dispatch({ type: "addMeetingAttendees" });
-                dispatch({ type: "selectAttendee", payload: "" });
               }}
             >
               Add Attendee
@@ -124,7 +123,7 @@ const MeetingFormWReducer = (props) => {
                 attendees: meetingAttendees,
                 date: meetingDate,
               });
-              dispatch({ type: "submitForm" });
+              dispatch({ type: "resetForm" });
             }}
           >
             Submit

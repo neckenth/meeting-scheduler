@@ -14,6 +14,7 @@ const Meetings = () => {
   const attendeeNames = [
     "Tim",
     "Anthony",
+    "Nancy",
     "Manan",
     "Lena",
     "Jeremy",

@@ -8,10 +8,6 @@ const MeetingsWReducer = () => {
 
   const { meetings, attendees, rooms, addNewMeeting } = state;
 
-  const handleSubmitForm = (values) => {
-    dispatch({ type: "submitForm", payload: { ...values } });
-  };
-
   return (
     <div>
       <h2>Meeting Scheduler</h2>
@@ -37,7 +33,12 @@ const MeetingsWReducer = () => {
         <MeetingFormWReducer
           attendees={attendees}
           rooms={rooms}
-          handleSubmitForm={handleSubmitForm}
+          handleSubmitForm={(values) =>
+            dispatch({
+              type: "addMeeting",
+              payload: { ...values },
+            })
+          }
         />
       )}
     </div>
