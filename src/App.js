@@ -10,9 +10,9 @@ function App() {
     <DateContext.Provider value={new Date()}>
       <PreferredColorContext.Provider value={colors}>
         <div className="App">
-          {/* <Meetings /> */}
+          <Meetings />
           {/* <MeetingsWReducer /> */}
-          <MeetingsWReducerWContext />
+          {/* <MeetingsWReducerWContext /> */}
         </div>
       </PreferredColorContext.Provider>
     </DateContext.Provider>
